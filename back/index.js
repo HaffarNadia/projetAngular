@@ -117,7 +117,8 @@ app.post('/product',(req,res)=>{
     let price = req.body.price;
     let dispo = req.body.disponibility;
     let catego = req.body.category;
-    let qr = `insert into product (name,price,disponibility,category) values('${name}','${price}','${dispo}','${catego}')`;
+    let pic = req.body.pic;
+    let qr = `insert into product (name,price,disponibility,pic,category) values('${name}','${price}','${dispo}','${pic}','${catego}')`;
     db.query(qr,(err,result)=>{
         if (err) {
             console.log(err);
